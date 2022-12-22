@@ -51,6 +51,7 @@ group :test do
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
   gem 'cucumber-rails', require: false
+  gem 'rspec-rails'
   # database_cleaner is not mandatory, but highly recommended
   gem 'database_cleaner'
 end
