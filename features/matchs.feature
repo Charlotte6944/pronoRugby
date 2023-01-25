@@ -7,10 +7,25 @@ Feature: Classement dans une poule
       When la France gagne contre la Nouvelle-Zélande
       Then la France a 4 points, la Nouvelle-Zélande a 0 points
 
+    Scenario: La France perd contre la Nouvelle-Zélande et remporte 4 points
+      Given La France a 0 point, la Nouvelle-Zélande a 0 point
+      When la France perd contre la Nouvelle-Zélande
+      Then la France a 0 points, la Nouvelle-Zélande a 4 points
+
     Scenario: La France gagne contre la Nouvelle-Zélande de moins de 7 points, la France remporte 4 points, la Nouvelle-Zélande remporte 1 point
       Given La France a 0 point, la Nouvelle-Zélande a 0 point
       When la France gagne contre la Nouvelle-Zélande de moins de 7 points
       Then la France a 4 points, la Nouvelle-Zélande a 1 points
+
+    Scenario: La France perd contre la Nouvelle-Zélande de moins de 7 points, la France remporte 1 point, la Nouvelle-Zélande remporte 4 points
+      Given La France a 0 point, la Nouvelle-Zélande a 0 point
+      When la France perd contre la Nouvelle-Zélande de moins de 7 points
+      Then la France a 1 points, la Nouvelle-Zélande a 4 points
+
+    Scenario: La France gagne contre la Nouvelle-Zélande avec un équart de 7 points, la France remporte 4 points, la Nouvelle-Zélande remporte 1 point
+    Given La France a 0 point, la Nouvelle-Zélande a 0 point
+    When la France gagne contre la Nouvelle-Zélande avec un écart de 7 points
+    Then la France a 4 points, la Nouvelle-Zélande a 1 points
 
     Scenario: La France fait match null contre la Nouvelle-Zélande les 2 équipes remportent 2 points
       Given La France a 0 point, la Nouvelle-Zélande a 0 point
