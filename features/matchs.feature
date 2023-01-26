@@ -32,6 +32,11 @@ Feature: Classement dans une poule
       When la France fait match null contre la Nouvelle-Zélande
       Then la France a 2 points, la Nouvelle-Zélande a 2 points
 
+    Scenario: La France gagne contre la Nouvelle-Zélande et marque 2 essais, la France gagne 4 points
+      Given La France a 0 point, la Nouvelle-Zélande a 0 point
+      When la France gagne contre la Nouvelle-Zélande et marque 2 essais
+      Then la France a 4 points, la Nouvelle-Zélande a 0 points
+
     Scenario: La France gagne contre la Nouvelle-Zélande et marque 4 essais, la France gagne 5 points
       Given La France a 0 point, la Nouvelle-Zélande a 0 point
       When la France gagne contre la Nouvelle-Zélande et marque 4 essais
@@ -41,3 +46,8 @@ Feature: Classement dans une poule
       Given La France a 0 point, la Nouvelle-Zélande a 0 point
       When la France gagne contre la Nouvelle-Zélande. La France marque 5 essais et la Nouvelle-Zélance marque 4 essais
       Then la France a 5 points, la Nouvelle-Zélande a 1 points
+
+    Scenario: La France fait match null contre la Nouvelle-Zélande. La France marque 5 essais et la Nouvelle-Zélance marque 4 essais, la France remporte 3 points et la Nouvelle-Zélande 3 point
+      Given La France a 0 point, la Nouvelle-Zélande a 0 point
+      When la France fait march null contre la Nouvelle-Zélande. La France marque 5 essais et la Nouvelle-Zélance marque 4 essais
+      Then la France a 3 points, la Nouvelle-Zélande a 3 points

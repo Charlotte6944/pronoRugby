@@ -39,13 +39,16 @@ When('la France fait match null contre la Nouvelle-Zélande') do
 end
 
 When('la France gagne contre la Nouvelle-Zélande et marque {int} essais') do |int|
-# When('la France gagne contre la Nouvelle-Zélande et marque {float} essais') do |float|
-  pending # Write code here that turns the phrase above into concrete actions
+  match = Match.new(equipe1_id: @france.id, equipe2_id: @nz.id, score_equipe1: 20, score_equipe2: 1, date: "2021-09-26", heure: "15:00:00", phase: "poule", essais_equipe1: int, essais_equipe2: 0)
+  PointEquipe.new(match, @france, @nz).calcul_point_equipe
 end
 
 When('la France gagne contre la Nouvelle-Zélande. La France marque {int} essais et la Nouvelle-Zélance marque {int} essais') do |int, int2|
-# When('la France gagne contre la Nouvelle-Zélande. La France marque {int} essais et la Nouvelle-Zélance marque {float} essais') do |int, float|
-# When('la France gagne contre la Nouvelle-Zélande. La France marque {float} essais et la Nouvelle-Zélance marque {int} essais') do |float, int|
-# When('la France gagne contre la Nouvelle-Zélande. La France marque {float} essais et la Nouvelle-Zélance marque {float} essais') do |float, float2|
-  pending # Write code here that turns the phrase above into concrete actions
+  match = Match.new(equipe1_id: @france.id, equipe2_id: @nz.id, score_equipe1: 30, score_equipe2: 20, date: "2021-09-26", heure: "15:00:00", phase: "poule", essais_equipe1: int, essais_equipe2: int2)
+  PointEquipe.new(match, @france, @nz).calcul_point_equipe
+end
+
+When('la France fait march null contre la Nouvelle-Zélande. La France marque {int} essais et la Nouvelle-Zélance marque {int} essais') do |int, int2|
+  match = Match.new(equipe1_id: @france.id, equipe2_id: @nz.id, score_equipe1: 30, score_equipe2: 30, date: "2021-09-26", heure: "15:00:00", phase: "poule", essais_equipe1: int, essais_equipe2: int2)
+  PointEquipe.new(match, @france, @nz).calcul_point_equipe
 end
